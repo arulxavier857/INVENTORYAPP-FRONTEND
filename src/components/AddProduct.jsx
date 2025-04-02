@@ -12,7 +12,7 @@ function AddProduct() {
     const saveProduct = async (e)=>{
         e.preventDefault()
         try{
-            const response = await axios.post('https://inventoryapp-frontend-1.onrender.com/addProduct',{name,quantity,price})
+            const response = await axios.post('https://inventoryapp-backend-ykrs.onrender.com/addProduct',{name,quantity,price})
             toast.success(response.data.message)
         }catch(err){
             console.log(err)
