@@ -13,7 +13,7 @@ function Dashboard(){
 
     const viewProducts = async ()=>{
         try{
-            const response = await axios.get("https://inventoryapp-frontend-1.onrender.com/viewProducts")
+            const response = await axios.get("https://inventoryapp-backend-ykrs.onrender.com/viewProducts")
             setProducts(response.data)
         }catch(error){
             console.log(error)
@@ -24,7 +24,7 @@ function Dashboard(){
         const isConfirmed = confirm("Do you want to delete?")
         if(isConfirmed){
             try{
-                const response = await axios.delete(`https://inventoryapp-frontend-1.onrender.com/deleteProduct/${id}`)
+                const response = await axios.delete(`https://inventoryapp-backend-ykrs.onrender.com/deleteProduct/${id}`)
                 toast.success(response.data.message)
                 viewProducts()
             }catch(error){
